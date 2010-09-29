@@ -17,3 +17,6 @@ Configuration
 The endpoint string has to be equal to the endpoint string in murmur.ini. If
 the host is not localhost (127.0.0.1), do not forget to set the icesecret in
 murmur.ini and mumble.xml to secure your mumble server.
+
+Your mumble server needs to have ICE enabled, not dbus.
+See http://mumble.sourceforge.net/Ice for details.
