@@ -59,9 +59,9 @@ class MurmurICE:
 		self.setState(state)
 
 	def kickUser(self, session, reason):
-		self.server.kickUser(session, reason.encoding('utf-8'))
+		self.server.kickUser(session, reason.encode('utf-8'))
 
 	def sendMsg(self, session, msg):
-		self.server.sendMessage(session, msg.encoding('utf-8'))
+		self.server.sendMessage(session, msg.encode('utf-8'))
 
 
