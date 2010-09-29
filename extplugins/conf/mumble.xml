@@ -1,0 +1,13 @@
+<configuration plugin="mumble">
+	<settings name="commands">
+		<set name="m_kick">100</set>
+		<set name="m_msg">40</set>
+		<set name="m_mute">100</set>
+		<set name="m_unmute">100</set>
+	</settings>
+	<settings name="settings">
+		<set name="serverid">1</set>
+		<set name="secret"></set>
+		<set name="endpoint">tcp -h 127.0.0.1 -p 6502</set>
+	</settings>
+</configuration>

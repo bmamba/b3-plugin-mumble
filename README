@@ -1,0 +1,10 @@
+Using this plugin you can interact with a Mumble server (so called Murmur). You can send messages, kick clients, mute and unmute them.
+
+Here are the commands:
+!m_msg <mumble_client> <message>
+!m_kick <mumble_client> <reason>
+!m_mute <mumble_client>
+!m_unmute <mumble_client>
+
+Your mumble server needs to have ICE enabled, not dbus.
+See http://mumble.sourceforge.net/Ice for details.

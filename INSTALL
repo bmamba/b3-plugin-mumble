@@ -1,0 +1,19 @@
+Needed dependencies
+-------------------
+Zero Ice is needed to run this plugin
+
+Needed Files
+------------
+Copy extplugin/cmdlevel.py to your b3 directory b3/extplugin and extplugin/conf/cmdlevel.xml to b3/extplugin/conf/.
+Add the following line to b3/conf/b3.xml:
+	<plugin config="@b3/extplugins/conf/cmdlevel.xml" name="cmdlevel" priority="12" />
+Be aware that the priority is unique in your b3.xml.
+
+Copy the directory Murmur into the b3 directory (the working directory where
+you will start the bot).
+
+Configuration
+-------------
+The endpoint string has to be equal to the endpoint string in murmur.ini. If
+the host is not localhost (127.0.0.1), do not forget to set the icesecret in
+murmur.ini and mumble.xml to secure your mumble server.
