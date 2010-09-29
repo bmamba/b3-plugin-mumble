@@ -19,6 +19,9 @@
 #   python-zeroc-ice
 #   Murmur 1.2.2
 
+__version__ = '1.0'
+__author__ = 'BlackMamba'
+
 import Murmur.MurmurICE
 import b3, b3.plugin
 import re
