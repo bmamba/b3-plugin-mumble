@@ -1,16 +1,19 @@
 # **********************************************************************
 #
-# Copyright (c) 2003-2007 ZeroC, Inc. All rights reserved.
+# Copyright (c) 2003-2009 ZeroC, Inc. All rights reserved.
 #
 # This copy of Ice is licensed to you under the terms described in the
 # ICE_LICENSE file included in this distribution.
 #
 # **********************************************************************
 
-# Ice version 3.2.1
+# Ice version 3.3.1
 # Generated from file `Murmur.ice'
 
 import Ice, IcePy, __builtin__
+
+if not Ice.__dict__.has_key("_struct_marker"):
+    Ice._struct_marker = object()
 
 # Start of module Murmur
 _M_Murmur = Ice.openModule('Murmur')
@@ -72,50 +75,94 @@ if not _M_Murmur.__dict__.has_key('User'):
             _h = 5 * _h + __builtin__.hash(self.idlesecs)
             return _h % 0x7fffffff
 
-        def __eq__(self, other):
-            if not self.session == other.session:
-                return False
-            if not self.userid == other.userid:
-                return False
-            if not self.mute == other.mute:
-                return False
-            if not self.deaf == other.deaf:
-                return False
-            if not self.suppress == other.suppress:
-                return False
-            if not self.selfMute == other.selfMute:
-                return False
-            if not self.selfDeaf == other.selfDeaf:
-                return False
-            if not self.channel == other.channel:
-                return False
-            if not self.name == other.name:
-                return False
-            if not self.onlinesecs == other.onlinesecs:
-                return False
-            if not self.bytespersec == other.bytespersec:
-                return False
-            if not self.version == other.version:
-                return False
-            if not self.release == other.release:
-                return False
-            if not self.os == other.os:
-                return False
-            if not self.osversion == other.osversion:
-                return False
-            if not self.identity == other.identity:
-                return False
-            if not self.context == other.context:
-                return False
-            if not self.comment == other.comment:
-                return False
-            if not self.address == other.address:
-                return False
-            if not self.tcponly == other.tcponly:
-                return False
-            if not self.idlesecs == other.idlesecs:
-                return False
-            return True
+        def __cmp__(self, other):
+            if other == None:
+                return 1
+            if self.session < other.session:
+                return -1
+            elif self.session > other.session:
+                return 1
+            if self.userid < other.userid:
+                return -1
+            elif self.userid > other.userid:
+                return 1
+            if self.mute < other.mute:
+                return -1
+            elif self.mute > other.mute:
+                return 1
+            if self.deaf < other.deaf:
+                return -1
+            elif self.deaf > other.deaf:
+                return 1
+            if self.suppress < other.suppress:
+                return -1
+            elif self.suppress > other.suppress:
+                return 1
+            if self.selfMute < other.selfMute:
+                return -1
+            elif self.selfMute > other.selfMute:
+                return 1
+            if self.selfDeaf < other.selfDeaf:
+                return -1
+            elif self.selfDeaf > other.selfDeaf:
+                return 1
+            if self.channel < other.channel:
+                return -1
+            elif self.channel > other.channel:
+                return 1
+            if self.name < other.name:
+                return -1
+            elif self.name > other.name:
+                return 1
+            if self.onlinesecs < other.onlinesecs:
+                return -1
+            elif self.onlinesecs > other.onlinesecs:
+                return 1
+            if self.bytespersec < other.bytespersec:
+                return -1
+            elif self.bytespersec > other.bytespersec:
+                return 1
+            if self.version < other.version:
+                return -1
+            elif self.version > other.version:
+                return 1
+            if self.release < other.release:
+                return -1
+            elif self.release > other.release:
+                return 1
+            if self.os < other.os:
+                return -1
+            elif self.os > other.os:
+                return 1
+            if self.osversion < other.osversion:
+                return -1
+            elif self.osversion > other.osversion:
+                return 1
+            if self.identity < other.identity:
+                return -1
+            elif self.identity > other.identity:
+                return 1
+            if self.context < other.context:
+                return -1
+            elif self.context > other.context:
+                return 1
+            if self.comment < other.comment:
+                return -1
+            elif self.comment > other.comment:
+                return 1
+            if self.address < other.address:
+                return -1
+            elif self.address > other.address:
+                return 1
+            if self.tcponly < other.tcponly:
+                return -1
+            elif self.tcponly > other.tcponly:
+                return 1
+            if self.idlesecs < other.idlesecs:
+                return -1
+            elif self.idlesecs > other.idlesecs:
+                return 1
+            return 0
 
         def __str__(self):
             return IcePy.stringify(self, _M_Murmur._t_User)
@@ -177,22 +224,38 @@ if not _M_Murmur.__dict__.has_key('Channel'):
             _h = 5 * _h + __builtin__.hash(self.position)
             return _h % 0x7fffffff
 
-        def __eq__(self, other):
-            if not self.id == other.id:
-                return False
-            if not self.name == other.name:
-                return False
-            if not self.parent == other.parent:
-                return False
-            if not self.links == other.links:
-                return False
-            if not self.description == other.description:
-                return False
-            if not self.temporary == other.temporary:
-                return False
-            if not self.position == other.position:
-                return False
-            return True
+        def __cmp__(self, other):
+            if other == None:
+                return 1
+            if self.id < other.id:
+                return -1
+            elif self.id > other.id:
+                return 1
+            if self.name < other.name:
+                return -1
+            elif self.name > other.name:
+                return 1
+            if self.parent < other.parent:
+                return -1
+            elif self.parent > other.parent:
+                return 1
+            if self.links < other.links:
+                return -1
+            elif self.links > other.links:
+                return 1
+            if self.description < other.description:
+                return -1
+            elif self.description > other.description:
+                return 1
+            if self.temporary < other.temporary:
+                return -1
+            elif self.temporary > other.temporary:
+                return 1
+            if self.position < other.position:
+                return -1
+            elif self.position > other.position:
+                return 1
+            return 0
 
         def __str__(self):
             return IcePy.stringify(self, _M_Murmur._t_Channel)
@@ -241,22 +304,38 @@ if not _M_Murmur.__dict__.has_key('Group'):
                     _h = 5 * _h + __builtin__.hash(_i2)
             return _h % 0x7fffffff
 
-        def __eq__(self, other):
-            if not self.name == other.name:
-                return False
-            if not self.inherited == other.inherited:
-                return False
-            if not self.inherit == other.inherit:
-                return False
-            if not self.inheritable == other.inheritable:
-                return False
-            if not self.add == other.add:
-                return False
-            if not self.remove == other.remove:
-                return False
-            if not self.members == other.members:
-                return False
-            return True
+        def __cmp__(self, other):
+            if other == None:
+                return 1
+            if self.name < other.name:
+                return -1
+            elif self.name > other.name:
+                return 1
+            if self.inherited < other.inherited:
+                return -1
+            elif self.inherited > other.inherited:
+                return 1
+            if self.inherit < other.inherit:
+                return -1
+            elif self.inherit > other.inherit:
+                return 1
+            if self.inheritable < other.inheritable:
+                return -1
+            elif self.inheritable > other.inheritable:
+                return 1
+            if self.add < other.add:
+                return -1
+            elif self.add > other.add:
+                return 1
+            if self.remove < other.remove:
+                return -1
+            elif self.remove > other.remove:
+                return 1
+            if self.members < other.members:
+                return -1
+            elif self.members > other.members:
+                return 1
+            return 0
 
         def __str__(self):
             return IcePy.stringify(self, _M_Murmur._t_Group)
@@ -329,22 +408,38 @@ if not _M_Murmur.__dict__.has_key('ACL'):
             _h = 5 * _h + __builtin__.hash(self.deny)
             return _h % 0x7fffffff
 
-        def __eq__(self, other):
-            if not self.applyHere == other.applyHere:
-                return False
-            if not self.applySubs == other.applySubs:
-                return False
-            if not self.inherited == other.inherited:
-                return False
-            if not self.userid == other.userid:
-                return False
-            if not self.group == other.group:
-                return False
-            if not self.allow == other.allow:
-                return False
-            if not self.deny == other.deny:
-                return False
-            return True
+        def __cmp__(self, other):
+            if other == None:
+                return 1
+            if self.applyHere < other.applyHere:
+                return -1
+            elif self.applyHere > other.applyHere:
+                return 1
+            if self.applySubs < other.applySubs:
+                return -1
+            elif self.applySubs > other.applySubs:
+                return 1
+            if self.inherited < other.inherited:
+                return -1
+            elif self.inherited > other.inherited:
+                return 1
+            if self.userid < other.userid:
+                return -1
+            elif self.userid > other.userid:
+                return 1
+            if self.group < other.group:
+                return -1
+            elif self.group > other.group:
+                return 1
+            if self.allow < other.allow:
+                return -1
+            elif self.allow > other.allow:
+                return 1
+            if self.deny < other.deny:
+                return -1
+            elif self.deny > other.deny:
+                return 1
+            return 0
 
         def __str__(self):
             return IcePy.stringify(self, _M_Murmur._t_ACL)
@@ -389,22 +484,38 @@ if not _M_Murmur.__dict__.has_key('Ban'):
             _h = 5 * _h + __builtin__.hash(self.duration)
             return _h % 0x7fffffff
 
-        def __eq__(self, other):
-            if not self.address == other.address:
-                return False
-            if not self.bits == other.bits:
-                return False
-            if not self.name == other.name:
-                return False
-            if not self.hash == other.hash:
-                return False
-            if not self.reason == other.reason:
-                return False
-            if not self.start == other.start:
-                return False
-            if not self.duration == other.duration:
-                return False
-            return True
+        def __cmp__(self, other):
+            if other == None:
+                return 1
+            if self.address < other.address:
+                return -1
+            elif self.address > other.address:
+                return 1
+            if self.bits < other.bits:
+                return -1
+            elif self.bits > other.bits:
+                return 1
+            if self.name < other.name:
+                return -1
+            elif self.name > other.name:
+                return 1
+            if self.hash < other.hash:
+                return -1
+            elif self.hash > other.hash:
+                return 1
+            if self.reason < other.reason:
+                return -1
+            elif self.reason > other.reason:
+                return 1
+            if self.start < other.start:
+                return -1
+            elif self.start > other.start:
+                return 1
+            if self.duration < other.duration:
+                return -1
+            elif self.duration > other.duration:
+                return 1
+            return 0
 
         def __str__(self):
             return IcePy.stringify(self, _M_Murmur._t_Ban)
@@ -437,12 +548,18 @@ if not _M_Murmur.__dict__.has_key('LogEntry'):
             _h = 5 * _h + __builtin__.hash(self.txt)
             return _h % 0x7fffffff
 
-        def __eq__(self, other):
-            if not self.timestamp == other.timestamp:
-                return False
-            if not self.txt == other.txt:
-                return False
-            return True
+        def __cmp__(self, other):
+            if other == None:
+                return 1
+            if self.timestamp < other.timestamp:
+                return -1
+            elif self.timestamp > other.timestamp:
+                return 1
+            if self.txt < other.txt:
+                return -1
+            elif self.txt > other.txt:
+                return 1
+            return 0
 
         def __str__(self):
             return IcePy.stringify(self, _M_Murmur._t_LogEntry)
@@ -592,8 +709,11 @@ if not _M_Murmur.__dict__.has_key('_t_UserInfoMap'):
 if not _M_Murmur.__dict__.has_key('Tree'):
     _M_Murmur.Tree = Ice.createTempClass()
     class Tree(Ice.Object):
-        def __init__(self, c=_M_Murmur.Channel(), children=None, users=None):
-            self.c = c
+        def __init__(self, c=Ice._struct_marker, children=None, users=None):
+            if c is Ice._struct_marker:
+                self.c = _M_Murmur.Channel()
+            else:
+                self.c = c
             self.children = children
             self.users = users
 
@@ -602,6 +722,10 @@ if not _M_Murmur.__dict__.has_key('Tree'):
 
         def ice_id(self, current=None):
             return '::Murmur::Tree'
+
+        def ice_staticId():
+            return '::Murmur::Tree'
+        ice_staticId = staticmethod(ice_staticId)
 
         def __str__(self):
             return IcePy.stringify(self, _M_Murmur._t_Tree)
@@ -847,6 +971,10 @@ if not _M_Murmur.__dict__.has_key('ServerCallback'):
         def ice_id(self, current=None):
             return '::Murmur::ServerCallback'
 
+        def ice_staticId():
+            return '::Murmur::ServerCallback'
+        ice_staticId = staticmethod(ice_staticId)
+
         #
         # Operation signatures.
         #
@@ -866,22 +994,22 @@ if not _M_Murmur.__dict__.has_key('ServerCallback'):
     class ServerCallbackPrx(Ice.ObjectPrx):
 
         def userConnected(self, state, _ctx=None):
-            return _M_Murmur.ServerCallback._op_userConnected.invoke(self, (state, ), _ctx)
+            return _M_Murmur.ServerCallback._op_userConnected.invoke(self, ((state, ), _ctx))
 
         def userDisconnected(self, state, _ctx=None):
-            return _M_Murmur.ServerCallback._op_userDisconnected.invoke(self, (state, ), _ctx)
+            return _M_Murmur.ServerCallback._op_userDisconnected.invoke(self, ((state, ), _ctx))
 
         def userStateChanged(self, state, _ctx=None):
-            return _M_Murmur.ServerCallback._op_userStateChanged.invoke(self, (state, ), _ctx)
+            return _M_Murmur.ServerCallback._op_userStateChanged.invoke(self, ((state, ), _ctx))
 
         def channelCreated(self, state, _ctx=None):
-            return _M_Murmur.ServerCallback._op_channelCreated.invoke(self, (state, ), _ctx)
+            return _M_Murmur.ServerCallback._op_channelCreated.invoke(self, ((state, ), _ctx))
 
         def channelRemoved(self, state, _ctx=None):
-            return _M_Murmur.ServerCallback._op_channelRemoved.invoke(self, (state, ), _ctx)
+            return _M_Murmur.ServerCallback._op_channelRemoved.invoke(self, ((state, ), _ctx))
 
         def channelStateChanged(self, state, _ctx=None):
-            return _M_Murmur.ServerCallback._op_channelStateChanged.invoke(self, (state, ), _ctx)
+            return _M_Murmur.ServerCallback._op_channelStateChanged.invoke(self, ((state, ), _ctx))
 
         def checkedCast(proxy, facetOrCtx=None, _ctx=None):
             return _M_Murmur.ServerCallbackPrx.ice_checkedCast(proxy, '::Murmur::ServerCallback', facetOrCtx, _ctx)
@@ -928,6 +1056,10 @@ if not _M_Murmur.__dict__.has_key('ServerContextCallback'):
         def ice_id(self, current=None):
             return '::Murmur::ServerContextCallback'
 
+        def ice_staticId():
+            return '::Murmur::ServerContextCallback'
+        ice_staticId = staticmethod(ice_staticId)
+
         #
         # Operation signatures.
         #
@@ -942,7 +1074,7 @@ if not _M_Murmur.__dict__.has_key('ServerContextCallback'):
     class ServerContextCallbackPrx(Ice.ObjectPrx):
 
         def contextAction(self, action, usr, session, channelid, _ctx=None):
-            return _M_Murmur.ServerContextCallback._op_contextAction.invoke(self, (action, usr, session, channelid), _ctx)
+            return _M_Murmur.ServerContextCallback._op_contextAction.invoke(self, ((action, usr, session, channelid), _ctx))
 
         def checkedCast(proxy, facetOrCtx=None, _ctx=None):
             return _M_Murmur.ServerContextCallbackPrx.ice_checkedCast(proxy, '::Murmur::ServerContextCallback', facetOrCtx, _ctx)
@@ -978,6 +1110,10 @@ if not _M_Murmur.__dict__.has_key('ServerAuthenticator'):
         def ice_id(self, current=None):
             return '::Murmur::ServerAuthenticator'
 
+        def ice_staticId():
+            return '::Murmur::ServerAuthenticator'
+        ice_staticId = staticmethod(ice_staticId)
+
         #
         # Operation signatures.
         #
@@ -996,19 +1132,19 @@ if not _M_Murmur.__dict__.has_key('ServerAuthenticator'):
     class ServerAuthenticatorPrx(Ice.ObjectPrx):
 
         def authenticate(self, name, pw, certificates, certhash, certstrong, _ctx=None):
-            return _M_Murmur.ServerAuthenticator._op_authenticate.invoke(self, (name, pw, certificates, certhash, certstrong), _ctx)
+            return _M_Murmur.ServerAuthenticator._op_authenticate.invoke(self, ((name, pw, certificates, certhash, certstrong), _ctx))
 
         def getInfo(self, id, _ctx=None):
-            return _M_Murmur.ServerAuthenticator._op_getInfo.invoke(self, (id, ), _ctx)
+            return _M_Murmur.ServerAuthenticator._op_getInfo.invoke(self, ((id, ), _ctx))
 
         def nameToId(self, name, _ctx=None):
-            return _M_Murmur.ServerAuthenticator._op_nameToId.invoke(self, (name, ), _ctx)
+            return _M_Murmur.ServerAuthenticator._op_nameToId.invoke(self, ((name, ), _ctx))
 
         def idToName(self, id, _ctx=None):
-            return _M_Murmur.ServerAuthenticator._op_idToName.invoke(self, (id, ), _ctx)
+            return _M_Murmur.ServerAuthenticator._op_idToName.invoke(self, ((id, ), _ctx))
 
         def idToTexture(self, id, _ctx=None):
-            return _M_Murmur.ServerAuthenticator._op_idToTexture.invoke(self, (id, ), _ctx)
+            return _M_Murmur.ServerAuthenticator._op_idToTexture.invoke(self, ((id, ), _ctx))
 
         def checkedCast(proxy, facetOrCtx=None, _ctx=None):
             return _M_Murmur.ServerAuthenticatorPrx.ice_checkedCast(proxy, '::Murmur::ServerAuthenticator', facetOrCtx, _ctx)
@@ -1048,6 +1184,10 @@ if not _M_Murmur.__dict__.has_key('ServerUpdatingAuthenticator'):
         def ice_id(self, current=None):
             return '::Murmur::ServerUpdatingAuthenticator'
 
+        def ice_staticId():
+            return '::Murmur::ServerUpdatingAuthenticator'
+        ice_staticId = staticmethod(ice_staticId)
+
         #
         # Operation signatures.
         #
@@ -1066,19 +1206,19 @@ if not _M_Murmur.__dict__.has_key('ServerUpdatingAuthenticator'):
     class ServerUpdatingAuthenticatorPrx(_M_Murmur.ServerAuthenticatorPrx):
 
         def registerUser(self, info, _ctx=None):
-            return _M_Murmur.ServerUpdatingAuthenticator._op_registerUser.invoke(self, (info, ), _ctx)
+            return _M_Murmur.ServerUpdatingAuthenticator._op_registerUser.invoke(self, ((info, ), _ctx))
 
         def unregisterUser(self, id, _ctx=None):
-            return _M_Murmur.ServerUpdatingAuthenticator._op_unregisterUser.invoke(self, (id, ), _ctx)
+            return _M_Murmur.ServerUpdatingAuthenticator._op_unregisterUser.invoke(self, ((id, ), _ctx))
 
         def getRegisteredUsers(self, filter, _ctx=None):
-            return _M_Murmur.ServerUpdatingAuthenticator._op_getRegisteredUsers.invoke(self, (filter, ), _ctx)
+            return _M_Murmur.ServerUpdatingAuthenticator._op_getRegisteredUsers.invoke(self, ((filter, ), _ctx))
 
         def setInfo(self, id, info, _ctx=None):
-            return _M_Murmur.ServerUpdatingAuthenticator._op_setInfo.invoke(self, (id, info), _ctx)
+            return _M_Murmur.ServerUpdatingAuthenticator._op_setInfo.invoke(self, ((id, info), _ctx))
 
         def setTexture(self, id, tex, _ctx=None):
-            return _M_Murmur.ServerUpdatingAuthenticator._op_setTexture.invoke(self, (id, tex), _ctx)
+            return _M_Murmur.ServerUpdatingAuthenticator._op_setTexture.invoke(self, ((id, tex), _ctx))
 
         def checkedCast(proxy, facetOrCtx=None, _ctx=None):
             return _M_Murmur.ServerUpdatingAuthenticatorPrx.ice_checkedCast(proxy, '::Murmur::ServerUpdatingAuthenticator', facetOrCtx, _ctx)
@@ -1117,6 +1257,10 @@ if not _M_Murmur.__dict__.has_key('Server'):
 
         def ice_id(self, current=None):
             return '::Murmur::Server'
+
+        def ice_staticId():
+            return '::Murmur::Server'
+        ice_staticId = staticmethod(ice_staticId)
 
         #
         # Operation signatures.
@@ -1178,145 +1322,145 @@ if not _M_Murmur.__dict__.has_key('Server'):
     class ServerPrx(Ice.ObjectPrx):
 
         def isRunning(self, _ctx=None):
-            return _M_Murmur.Server._op_isRunning.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_isRunning.invoke(self, ((), _ctx))
 
         def start(self, _ctx=None):
-            return _M_Murmur.Server._op_start.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_start.invoke(self, ((), _ctx))
 
         def stop(self, _ctx=None):
-            return _M_Murmur.Server._op_stop.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_stop.invoke(self, ((), _ctx))
 
         def delete(self, _ctx=None):
-            return _M_Murmur.Server._op_delete.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_delete.invoke(self, ((), _ctx))
 
         def id(self, _ctx=None):
-            return _M_Murmur.Server._op_id.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_id.invoke(self, ((), _ctx))
 
         def addCallback(self, cb, _ctx=None):
-            return _M_Murmur.Server._op_addCallback.invoke(self, (cb, ), _ctx)
+            return _M_Murmur.Server._op_addCallback.invoke(self, ((cb, ), _ctx))
 
         def removeCallback(self, cb, _ctx=None):
-            return _M_Murmur.Server._op_removeCallback.invoke(self, (cb, ), _ctx)
+            return _M_Murmur.Server._op_removeCallback.invoke(self, ((cb, ), _ctx))
 
         def setAuthenticator(self, auth, _ctx=None):
-            return _M_Murmur.Server._op_setAuthenticator.invoke(self, (auth, ), _ctx)
+            return _M_Murmur.Server._op_setAuthenticator.invoke(self, ((auth, ), _ctx))
 
         def getConf(self, key, _ctx=None):
-            return _M_Murmur.Server._op_getConf.invoke(self, (key, ), _ctx)
+            return _M_Murmur.Server._op_getConf.invoke(self, ((key, ), _ctx))
 
         def getAllConf(self, _ctx=None):
-            return _M_Murmur.Server._op_getAllConf.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_getAllConf.invoke(self, ((), _ctx))
 
         def setConf(self, key, value, _ctx=None):
-            return _M_Murmur.Server._op_setConf.invoke(self, (key, value), _ctx)
+            return _M_Murmur.Server._op_setConf.invoke(self, ((key, value), _ctx))
 
         def setSuperuserPassword(self, pw, _ctx=None):
-            return _M_Murmur.Server._op_setSuperuserPassword.invoke(self, (pw, ), _ctx)
+            return _M_Murmur.Server._op_setSuperuserPassword.invoke(self, ((pw, ), _ctx))
 
         def getLog(self, first, last, _ctx=None):
-            return _M_Murmur.Server._op_getLog.invoke(self, (first, last), _ctx)
+            return _M_Murmur.Server._op_getLog.invoke(self, ((first, last), _ctx))
 
         def getUsers(self, _ctx=None):
-            return _M_Murmur.Server._op_getUsers.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_getUsers.invoke(self, ((), _ctx))
 
         def getChannels(self, _ctx=None):
-            return _M_Murmur.Server._op_getChannels.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_getChannels.invoke(self, ((), _ctx))
 
         def getCertificateList(self, session, _ctx=None):
-            return _M_Murmur.Server._op_getCertificateList.invoke(self, (session, ), _ctx)
+            return _M_Murmur.Server._op_getCertificateList.invoke(self, ((session, ), _ctx))
 
         def getTree(self, _ctx=None):
-            return _M_Murmur.Server._op_getTree.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_getTree.invoke(self, ((), _ctx))
 
         def getBans(self, _ctx=None):
-            return _M_Murmur.Server._op_getBans.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_getBans.invoke(self, ((), _ctx))
 
         def setBans(self, bans, _ctx=None):
-            return _M_Murmur.Server._op_setBans.invoke(self, (bans, ), _ctx)
+            return _M_Murmur.Server._op_setBans.invoke(self, ((bans, ), _ctx))
 
         def kickUser(self, session, reason, _ctx=None):
-            return _M_Murmur.Server._op_kickUser.invoke(self, (session, reason), _ctx)
+            return _M_Murmur.Server._op_kickUser.invoke(self, ((session, reason), _ctx))
 
         def getState(self, session, _ctx=None):
-            return _M_Murmur.Server._op_getState.invoke(self, (session, ), _ctx)
+            return _M_Murmur.Server._op_getState.invoke(self, ((session, ), _ctx))
 
         def setState(self, state, _ctx=None):
-            return _M_Murmur.Server._op_setState.invoke(self, (state, ), _ctx)
+            return _M_Murmur.Server._op_setState.invoke(self, ((state, ), _ctx))
 
         def sendMessage(self, session, text, _ctx=None):
-            return _M_Murmur.Server._op_sendMessage.invoke(self, (session, text), _ctx)
+            return _M_Murmur.Server._op_sendMessage.invoke(self, ((session, text), _ctx))
 
         def hasPermission(self, session, channelid, perm, _ctx=None):
-            return _M_Murmur.Server._op_hasPermission.invoke(self, (session, channelid, perm), _ctx)
+            return _M_Murmur.Server._op_hasPermission.invoke(self, ((session, channelid, perm), _ctx))
 
         def addContextCallback(self, session, action, text, cb, ctx, _ctx=None):
-            return _M_Murmur.Server._op_addContextCallback.invoke(self, (session, action, text, cb, ctx), _ctx)
+            return _M_Murmur.Server._op_addContextCallback.invoke(self, ((session, action, text, cb, ctx), _ctx))
 
         def removeContextCallback(self, cb, _ctx=None):
-            return _M_Murmur.Server._op_removeContextCallback.invoke(self, (cb, ), _ctx)
+            return _M_Murmur.Server._op_removeContextCallback.invoke(self, ((cb, ), _ctx))
 
         def getChannelState(self, channelid, _ctx=None):
-            return _M_Murmur.Server._op_getChannelState.invoke(self, (channelid, ), _ctx)
+            return _M_Murmur.Server._op_getChannelState.invoke(self, ((channelid, ), _ctx))
 
         def setChannelState(self, state, _ctx=None):
-            return _M_Murmur.Server._op_setChannelState.invoke(self, (state, ), _ctx)
+            return _M_Murmur.Server._op_setChannelState.invoke(self, ((state, ), _ctx))
 
         def removeChannel(self, channelid, _ctx=None):
-            return _M_Murmur.Server._op_removeChannel.invoke(self, (channelid, ), _ctx)
+            return _M_Murmur.Server._op_removeChannel.invoke(self, ((channelid, ), _ctx))
 
         def addChannel(self, name, parent, _ctx=None):
-            return _M_Murmur.Server._op_addChannel.invoke(self, (name, parent), _ctx)
+            return _M_Murmur.Server._op_addChannel.invoke(self, ((name, parent), _ctx))
 
         def sendMessageChannel(self, channelid, tree, text, _ctx=None):
-            return _M_Murmur.Server._op_sendMessageChannel.invoke(self, (channelid, tree, text), _ctx)
+            return _M_Murmur.Server._op_sendMessageChannel.invoke(self, ((channelid, tree, text), _ctx))
 
         def getACL(self, channelid, _ctx=None):
-            return _M_Murmur.Server._op_getACL.invoke(self, (channelid, ), _ctx)
+            return _M_Murmur.Server._op_getACL.invoke(self, ((channelid, ), _ctx))
 
         def setACL(self, channelid, acls, groups, inherit, _ctx=None):
-            return _M_Murmur.Server._op_setACL.invoke(self, (channelid, acls, groups, inherit), _ctx)
+            return _M_Murmur.Server._op_setACL.invoke(self, ((channelid, acls, groups, inherit), _ctx))
 
         def addUserToGroup(self, channelid, session, group, _ctx=None):
-            return _M_Murmur.Server._op_addUserToGroup.invoke(self, (channelid, session, group), _ctx)
+            return _M_Murmur.Server._op_addUserToGroup.invoke(self, ((channelid, session, group), _ctx))
 
         def removeUserFromGroup(self, channelid, session, group, _ctx=None):
-            return _M_Murmur.Server._op_removeUserFromGroup.invoke(self, (channelid, session, group), _ctx)
+            return _M_Murmur.Server._op_removeUserFromGroup.invoke(self, ((channelid, session, group), _ctx))
 
         def redirectWhisperGroup(self, session, source, target, _ctx=None):
-            return _M_Murmur.Server._op_redirectWhisperGroup.invoke(self, (session, source, target), _ctx)
+            return _M_Murmur.Server._op_redirectWhisperGroup.invoke(self, ((session, source, target), _ctx))
 
         def getUserNames(self, ids, _ctx=None):
-            return _M_Murmur.Server._op_getUserNames.invoke(self, (ids, ), _ctx)
+            return _M_Murmur.Server._op_getUserNames.invoke(self, ((ids, ), _ctx))
 
         def getUserIds(self, names, _ctx=None):
-            return _M_Murmur.Server._op_getUserIds.invoke(self, (names, ), _ctx)
+            return _M_Murmur.Server._op_getUserIds.invoke(self, ((names, ), _ctx))
 
         def registerUser(self, info, _ctx=None):
-            return _M_Murmur.Server._op_registerUser.invoke(self, (info, ), _ctx)
+            return _M_Murmur.Server._op_registerUser.invoke(self, ((info, ), _ctx))
 
         def unregisterUser(self, userid, _ctx=None):
-            return _M_Murmur.Server._op_unregisterUser.invoke(self, (userid, ), _ctx)
+            return _M_Murmur.Server._op_unregisterUser.invoke(self, ((userid, ), _ctx))
 
         def updateRegistration(self, userid, info, _ctx=None):
-            return _M_Murmur.Server._op_updateRegistration.invoke(self, (userid, info), _ctx)
+            return _M_Murmur.Server._op_updateRegistration.invoke(self, ((userid, info), _ctx))
 
         def getRegistration(self, userid, _ctx=None):
-            return _M_Murmur.Server._op_getRegistration.invoke(self, (userid, ), _ctx)
+            return _M_Murmur.Server._op_getRegistration.invoke(self, ((userid, ), _ctx))
 
         def getRegisteredUsers(self, filter, _ctx=None):
-            return _M_Murmur.Server._op_getRegisteredUsers.invoke(self, (filter, ), _ctx)
+            return _M_Murmur.Server._op_getRegisteredUsers.invoke(self, ((filter, ), _ctx))
 
         def verifyPassword(self, name, pw, _ctx=None):
-            return _M_Murmur.Server._op_verifyPassword.invoke(self, (name, pw), _ctx)
+            return _M_Murmur.Server._op_verifyPassword.invoke(self, ((name, pw), _ctx))
 
         def getTexture(self, userid, _ctx=None):
-            return _M_Murmur.Server._op_getTexture.invoke(self, (userid, ), _ctx)
+            return _M_Murmur.Server._op_getTexture.invoke(self, ((userid, ), _ctx))
 
         def setTexture(self, userid, tex, _ctx=None):
-            return _M_Murmur.Server._op_setTexture.invoke(self, (userid, tex), _ctx)
+            return _M_Murmur.Server._op_setTexture.invoke(self, ((userid, tex), _ctx))
 
         def getUptime(self, _ctx=None):
-            return _M_Murmur.Server._op_getUptime.invoke(self, (), _ctx)
+            return _M_Murmur.Server._op_getUptime.invoke(self, ((), _ctx))
 
         def checkedCast(proxy, facetOrCtx=None, _ctx=None):
             return _M_Murmur.ServerPrx.ice_checkedCast(proxy, '::Murmur::Server', facetOrCtx, _ctx)
@@ -1398,6 +1542,10 @@ if not _M_Murmur.__dict__.has_key('MetaCallback'):
         def ice_id(self, current=None):
             return '::Murmur::MetaCallback'
 
+        def ice_staticId():
+            return '::Murmur::MetaCallback'
+        ice_staticId = staticmethod(ice_staticId)
+
         #
         # Operation signatures.
         #
@@ -1413,10 +1561,10 @@ if not _M_Murmur.__dict__.has_key('MetaCallback'):
     class MetaCallbackPrx(Ice.ObjectPrx):
 
         def started(self, srv, _ctx=None):
-            return _M_Murmur.MetaCallback._op_started.invoke(self, (srv, ), _ctx)
+            return _M_Murmur.MetaCallback._op_started.invoke(self, ((srv, ), _ctx))
 
         def stopped(self, srv, _ctx=None):
-            return _M_Murmur.MetaCallback._op_stopped.invoke(self, (srv, ), _ctx)
+            return _M_Murmur.MetaCallback._op_stopped.invoke(self, ((srv, ), _ctx))
 
         def checkedCast(proxy, facetOrCtx=None, _ctx=None):
             return _M_Murmur.MetaCallbackPrx.ice_checkedCast(proxy, '::Murmur::MetaCallback', facetOrCtx, _ctx)
@@ -1456,6 +1604,10 @@ if not _M_Murmur.__dict__.has_key('Meta'):
         def ice_id(self, current=None):
             return '::Murmur::Meta'
 
+        def ice_staticId():
+            return '::Murmur::Meta'
+        ice_staticId = staticmethod(ice_staticId)
+
         #
         # Operation signatures.
         #
@@ -1478,31 +1630,31 @@ if not _M_Murmur.__dict__.has_key('Meta'):
     class MetaPrx(Ice.ObjectPrx):
 
         def getServer(self, id, _ctx=None):
-            return _M_Murmur.Meta._op_getServer.invoke(self, (id, ), _ctx)
+            return _M_Murmur.Meta._op_getServer.invoke(self, ((id, ), _ctx))
 
         def newServer(self, _ctx=None):
-            return _M_Murmur.Meta._op_newServer.invoke(self, (), _ctx)
+            return _M_Murmur.Meta._op_newServer.invoke(self, ((), _ctx))
 
         def getBootedServers(self, _ctx=None):
-            return _M_Murmur.Meta._op_getBootedServers.invoke(self, (), _ctx)
+            return _M_Murmur.Meta._op_getBootedServers.invoke(self, ((), _ctx))
 
         def getAllServers(self, _ctx=None):
-            return _M_Murmur.Meta._op_getAllServers.invoke(self, (), _ctx)
+            return _M_Murmur.Meta._op_getAllServers.invoke(self, ((), _ctx))
 
         def getDefaultConf(self, _ctx=None):
-            return _M_Murmur.Meta._op_getDefaultConf.invoke(self, (), _ctx)
+            return _M_Murmur.Meta._op_getDefaultConf.invoke(self, ((), _ctx))
 
         def getVersion(self, _ctx=None):
-            return _M_Murmur.Meta._op_getVersion.invoke(self, (), _ctx)
+            return _M_Murmur.Meta._op_getVersion.invoke(self, ((), _ctx))
 
         def addCallback(self, cb, _ctx=None):
-            return _M_Murmur.Meta._op_addCallback.invoke(self, (cb, ), _ctx)
+            return _M_Murmur.Meta._op_addCallback.invoke(self, ((cb, ), _ctx))
 
         def removeCallback(self, cb, _ctx=None):
-            return _M_Murmur.Meta._op_removeCallback.invoke(self, (cb, ), _ctx)
+            return _M_Murmur.Meta._op_removeCallback.invoke(self, ((cb, ), _ctx))
 
         def getUptime(self, _ctx=None):
-            return _M_Murmur.Meta._op_getUptime.invoke(self, (), _ctx)
+            return _M_Murmur.Meta._op_getUptime.invoke(self, ((), _ctx))
 
         def checkedCast(proxy, facetOrCtx=None, _ctx=None):
             return _M_Murmur.MetaPrx.ice_checkedCast(proxy, '::Murmur::Meta', facetOrCtx, _ctx)
