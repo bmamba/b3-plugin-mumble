@@ -16,10 +16,11 @@
 #
 # Requirements:
 #   B3 v1.3+
+#   python 2.7+
 #   python-zeroc-ice
 #   Murmur 1.2.2
 
-__version__ = '1.0'
+__version__ = '1.1'
 __author__ = 'BlackMamba'
 
 import Murmur.MurmurICE
